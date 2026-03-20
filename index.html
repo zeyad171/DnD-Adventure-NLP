@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D&D Adventure - Quest for Freedom</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-overlay"></div>
+    
+    <header class="game-header">
+        <h1 class="game-title">
+            <span class="title-icon">🐉</span>
+            D&D Adventure
+            <span class="title-icon">⚔️</span>
+        </h1>
+        <p class="game-subtitle">Quest for Freedom</p>
+    </header>
+
+    <main class="game-container">
+        <!-- LEFT PANEL: Map & Progress -->
+        <aside class="left-panel">
+            <!-- Maze Map -->
+            <section class="panel map-panel">
+                <h2 class="panel-title">
+                    <span class="icon">🗺️</span> Quest Map
+                </h2>
+                <div id="maze-container">
+                    <svg id="maze-svg" viewBox="30 -95 400 450"></svg>
+                </div>
+                <div class="map-legend">
+                    <span class="legend-item"><span class="dot current"></span> Current</span>
+                    <span class="legend-item"><span class="dot visited"></span> Visited</span>
+                    <span class="legend-item"><span class="dot locked"></span> Locked</span>
+                    <span class="legend-item"><span class="dot unknown"></span> Unknown</span>
+                </div>
+            </section>
+
+            <!-- Progress Stats -->
+            <section class="panel stats-panel">
+                <h2 class="panel-title">
+                    <span class="icon">📊</span> Progress
+                </h2>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span class="stat-value" id="rooms-visited">1</span>
+                        <span class="stat-label">/ 10 Rooms</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value" id="items-collected">0</span>
+                        <span class="stat-label">/ 12 Items</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value" id="puzzles-solved">0</span>
+                        <span class="stat-label">/ 5 Puzzles</span>
+                    </div>
+                </div>
+            </section>
+        </aside>
+
+        <!-- CENTER PANEL: Game Area -->
+        <section class="center-panel">
+            <!-- Room Display -->
+            <section class="panel room-panel">
+                <div class="room-header">
+                    <h2 class="room-name" id="room-name">Grand Hall</h2>
+                    <span class="room-icon" id="room-icon">🏰</span>
+                </div>
+                <p class="room-description" id="room-description">
+                    A vast entrance hall shrouded in darkness. Cobwebs hang from the vaulted ceiling, 
+                    and the air is thick with the scent of decay...
+                </p>
+            </section>
+
+            <!-- Actions -->
+            <section class="panel actions-panel">
+                <h2 class="panel-title">
+                    <span class="icon">⚔️</span> Actions
+                </h2>
+                <div class="actions-grid" id="actions-container">
+                    <!-- Actions will be dynamically generated -->
+                </div>
+            </section>
+
+            <!-- Navigation -->
+            <section class="panel navigation-panel">
+                <h2 class="panel-title">
+                    <span class="icon">🧭</span> Navigation
+                </h2>
+                <div class="nav-compass">
+                    <button class="nav-btn north" id="nav-north" disabled>
+                        <span class="nav-arrow">▲</span>
+                        <span class="nav-label">North</span>
+                    </button>
+                    <div class="nav-row">
+                        <button class="nav-btn west" id="nav-west" disabled>
+                            <span class="nav-arrow">◄</span>
+                            <span class="nav-label">West</span>
+                        </button>
+                        <div class="nav-center">
+                            <span id="current-room-indicator">Hall</span>
+                        </div>
+                        <button class="nav-btn east" id="nav-east" disabled>
+                            <span class="nav-arrow">►</span>
+                            <span class="nav-label">East</span>
+                        </button>
+                    </div>
+                    <button class="nav-btn south" id="nav-south" disabled>
+                        <span class="nav-arrow">▼</span>
+                        <span class="nav-label">South</span>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Game Log -->
+            <section class="panel log-panel">
+                <h2 class="panel-title">
+                    <span class="icon">📜</span> Game Log
+                </h2>
+                <div class="log-container" id="game-log">
+                    <p class="log-entry">Your adventure begins! Roll for initiative, brave hero...</p>
+                </div>
+            </section>
+        </section>
+
+        <!-- RIGHT PANEL: Inventory & AI -->
+        <aside class="right-panel">
+            <!-- Inventory -->
+            <section class="panel inventory-panel">
+                <h2 class="panel-title">
+                    <span class="icon">🎒</span> Inventory
+                </h2>
+                <div class="inventory-grid" id="inventory-container">
+                    <div class="inventory-slot empty"></div>
+                    <div class="inventory-slot empty"></div>
+                    <div class="inventory-slot empty"></div>
+                    <div class="inventory-slot empty"></div>
+                    <div class="inventory-slot empty"></div>
+                    <div class="inventory-slot empty"></div>
+                    <div class="inventory-slot empty"></div>
+                    <div class="inventory-slot empty"></div>
+                    <div class="inventory-slot empty"></div>
+                    <div class="inventory-slot empty"></div>
+                    <div class="inventory-slot empty"></div>
+                    <div class="inventory-slot empty"></div>
+                </div>
+            </section>
+
+            <!-- AI Control Panel -->
+            <section class="panel ai-panel">
+                <h2 class="panel-title">
+                    <span class="icon">🤖</span> AI Assistant
+                </h2>
+                
+                <!-- Chat Input -->
+                <div class="chat-container">
+                    <input type="text" id="chat-input" class="chat-input" 
+                           placeholder="Consult the Dungeon Master...">
+                    <button id="ask-chatbot" class="btn btn-primary">
+                        <span class="btn-icon">✨</span> Ask
+                    </button>
+                </div>
+                
+                <!-- Chatbot Response -->
+                <div class="ai-response" id="ai-response">
+                    <p class="response-text">The Dungeon Master awaits your questions...</p>
+                </div>
+
+                <!-- Agent Controls -->
+                <div class="agent-controls">
+                    <button id="agent-act" class="btn btn-secondary">
+                        <span class="btn-icon">🎭</span> Let Agent Act
+                    </button>
+                    <div class="agent-status" id="agent-status">
+                        Agent ready
+                    </div>
+                </div>
+
+                <!-- Training Mode -->
+                <div class="training-section">
+                    <label class="training-toggle">
+                        <input type="checkbox" id="training-mode">
+                        <span class="toggle-slider"></span>
+                        <span class="toggle-label">Training Mode</span>
+                    </label>
+                    <p class="training-hint">Enable to teach the agent correct actions</p>
+                </div>
+            </section>
+
+            <!-- Training Visualization -->
+            <section class="panel training-panel">
+                <h2 class="panel-title">
+                    <span class="icon">📈</span> Agent Learning
+                </h2>
+                
+                <!-- Training Stats -->
+                <div class="training-stats">
+                    <div class="training-stat">
+                        <span class="stat-icon">🎮</span>
+                        <span class="stat-value" id="games-completed">0</span>
+                        <span class="stat-label">Games</span>
+                    </div>
+                    <div class="training-stat">
+                        <span class="stat-icon">🎯</span>
+                        <span class="stat-value" id="training-count">0</span>
+                        <span class="stat-label">Samples</span>
+                    </div>
+                    <div class="training-stat">
+                        <span class="stat-icon">📉</span>
+                        <span class="stat-value" id="avg-loss">-</span>
+                        <span class="stat-label">Avg Loss</span>
+                    </div>
+                    <div class="training-stat">
+                        <span class="stat-icon">✅</span>
+                        <span class="stat-value" id="accuracy">-</span>
+                        <span class="stat-label">Accuracy</span>
+                    </div>
+                </div>
+
+                <!-- Model Health Indicator -->
+                <div class="model-health" id="model-health">
+                    <span class="health-icon">🔴</span>
+                    <span class="health-text">Untrained - Play 3-5 games to train</span>
+                </div>
+
+                <!-- Training Controls -->
+                <div class="training-controls">
+                    <button id="batch-train-btn" class="btn btn-primary" title="Train model on all recorded moves">
+                        <span class="btn-icon">🧠</span> Train on History (<span id="history-count">0</span> moves)
+                    </button>
+                    <button id="auto-train-btn" class="btn btn-secondary" title="Toggle automatic training after each game">
+                        <span class="btn-icon">🔄</span> Auto-Train: <span id="auto-train-status">OFF</span>
+                    </button>
+                </div>
+
+                <!-- Learning Progress Bar -->
+                <div class="learning-progress">
+                    <div class="progress-label">Learning Progress</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="learning-progress" style="width: 0%"></div>
+                    </div>
+                    <div class="progress-status" id="learning-status">Untrained</div>
+                </div>
+
+                <!-- Action Distribution -->
+                <div class="action-distribution">
+                    <div class="dist-label">Action Distribution</div>
+                    <div class="dist-bars" id="action-dist">
+                        <div class="dist-bar" title="Look"><span>👁️</span><div class="bar" data-action="0"></div></div>
+                        <div class="dist-bar" title="Read"><span>📚</span><div class="bar" data-action="1"></div></div>
+                        <div class="dist-bar" title="Take Key"><span>🗝️</span><div class="bar" data-action="2"></div></div>
+                        <div class="dist-bar" title="Use Key"><span>🔓</span><div class="bar" data-action="3"></div></div>
+                        <div class="dist-bar" title="Exit"><span>🚪</span><div class="bar" data-action="4"></div></div>
+                        <div class="dist-bar" title="Navigate"><span>🧭</span><div class="bar" data-action="5"></div></div>
+                        <div class="dist-bar" title="Take Item"><span>📦</span><div class="bar" data-action="6"></div></div>
+                        <div class="dist-bar" title="Puzzle"><span>🧩</span><div class="bar" data-action="7"></div></div>
+                        <div class="dist-bar" title="Interact"><span>🤝</span><div class="bar" data-action="8"></div></div>
+                    </div>
+                </div>
+
+                <!-- Loss Chart -->
+                <div class="loss-chart-container">
+                    <canvas id="loss-chart" height="100"></canvas>
+                </div>
+
+                <!-- Training Tips -->
+                <div class="training-tips" id="training-tips">
+                    <h3>📖 Training Guide</h3>
+                    <ul>
+                        <li>🎮 <strong>Play 3-5 complete games</strong> for basic training</li>
+                        <li>🧠 <strong>Click "Train on History"</strong> after each game</li>
+                        <li>🔴 Red = Untrained, 🟡 Yellow = Learning, 🟢 Green = Trained</li>
+                        <li>📊 Accuracy >60% = Good, >80% = Excellent</li>
+                    </ul>
+                </div>
+            </section>
+        </aside>
+    </main>
+
+    <!-- Footer with Controls -->
+    <footer class="game-footer">
+        <button id="restart-btn" class="btn btn-danger">
+            <span class="btn-icon">🔄</span> Restart Game
+        </button>
+        <div class="footer-info">
+            <span id="game-time">Time: 00:00</span>
+            <span class="separator">|</span>
+            <span id="move-count">Moves: 0</span>
+        </div>
+    </footer>
+
+    <!-- Restart Confirmation Modal -->
+    <div id="restart-modal" class="modal hidden">
+        <div class="modal-content">
+            <h3 class="modal-title">⚠️ Restart Game?</h3>
+            <p class="modal-text">All progress will be lost. Your quest will restart.</p>
+            <div class="modal-actions">
+                <button id="confirm-restart" class="btn btn-danger">Yes, Restart</button>
+                <button id="cancel-restart" class="btn btn-secondary">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Victory Modal -->
+    <div id="victory-modal" class="modal hidden">
+        <div class="modal-content victory">
+            <h3 class="modal-title">🎉 VICTORY! 🎉</h3>
+            <p class="modal-text">You have completed your quest, brave adventurer!</p>
+            <div class="victory-stats">
+                <p>Time: <span id="final-time">00:00</span></p>
+                <p>Moves: <span id="final-moves">0</span></p>
+                <p>Items Found: <span id="final-items">0</span>/12</p>
+            </div>
+            <button id="play-again" class="btn btn-primary">Play Again</button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="game_config.js"></script>
+    <script src="maze_renderer.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

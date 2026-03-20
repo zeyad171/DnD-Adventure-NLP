@@ -1,0 +1,367 @@
+# D&D Adventure - Game Rules & Knowledge Base
+
+## Game Overview
+
+You are an adventurer trapped in a magical dungeon inspired by Dungeons & Dragons! Your quest is to explore 10 interconnected chambers, collect 11 magical items, solve 5 puzzles, and activate the escape portal to gain your freedom and legendary status.
+
+## Setting
+
+A fantasy dungeon beneath the Dragon's Rest Tavern. Each chamber holds secrets, treasures, and challenges worthy of a true hero. The dungeon is protected by magical wards, locked passages, and ancient puzzles left by wizards and liches of old.
+
+## Quest Objectives
+
+1. Explore all 10 chambers of the dungeon
+2. Collect magical items scattered throughout the rooms
+3. Solve 5 puzzles to unlock passages and reveal secrets
+4. Gather the three keys needed to open the Portal Chamber
+5. Perform the Portal Activation Ritual using three ritual items
+6. Step through the portal to freedom and complete your quest!
+
+---
+
+## Game Rules - How to Play
+
+**What is this game?**
+This is a D&D-style text adventure game where you explore a magical dungeon, solve puzzles, collect items, and escape through a portal. You play as an adventurer trapped in a dungeon with 10 interconnected chambers.
+
+**Basic Rules:**
+- **Movement**: Use WASD keys or arrow keys to move between rooms (North/South/East/West)
+- **Looking Around**: Press L to look around and discover items and clues in your current room
+- **Collecting Items**: Click action buttons or use items you find to add them to your inventory
+- **Solving Puzzles**: Each puzzle requires specific items or actions. Read clues carefully!
+- **Chat with DM**: Type questions in the chat to ask the Dungeon Master for hints and guidance
+- **Winning**: Complete all objectives and perform the final ritual to escape through the portal
+
+**Game Mechanics:**
+- You start in the Tavern Entrance (hall) with an empty inventory
+- Each room may contain items, puzzles, or locked passages
+- Some passages require specific items to unlock (e.g., torch needed for Temple)
+- Items can be consumed when used (keys, ritual items)
+- You must collect 11 magical items total
+- You must solve 5 puzzles to progress
+- You need 3 keys to access the Portal Chamber
+- The final ritual requires 3 specific items: Holy Water, Scroll, and Tome
+
+**Controls:**
+- **W** or **↑** = Move North
+- **S** or **↓** = Move South  
+- **A** or **←** = Move West
+- **D** or **→** = Move East
+- **L** = Look around (Roll for Perception!)
+- **E** = Export game log
+- **Click buttons** = Perform room-specific actions
+- **Enter in chat** = Ask the Dungeon Master for help
+
+**Tips for Success:**
+1. Always look around (press L) when entering new rooms
+2. Take the Everburning Torch first - it's essential for accessing several rooms
+3. Read everything - spellbooks and inscriptions contain puzzle solutions
+4. Collect all three keys before attempting to reach the Portal Chamber
+5. Gather the ritual items (Holy Water, Scroll, Tome) before the final puzzle
+6. Some items are consumed when used - plan accordingly!
+
+**What to do:**
+- Explore all 10 chambers
+- Collect items and solve puzzles
+- Ask the Dungeon Master (chat) if you get stuck
+- Complete the final ritual to win!
+
+---
+
+### Tavern Entrance (Starting Room)
+- **Room ID**: hall
+- **Description**: The Dragon's Rest Tavern where adventures begin. The smell of ale and roasted meat fills the air. A quest board hangs on the wall.
+- **Connections**: North to Wizard's Study, East to Temple of Pelor (requires Everburning Torch), South to Goblin Prison, West to Dwarven Forge
+- **Items Available**: Everburning Torch
+- **Actions**: Look around, take the torch
+- **Tips**: Take the torch first - you need it to access the Temple and Hall of Heroes!
+
+### Wizard's Study
+- **Room ID**: library
+- **Description**: Arcane tomes and spell scrolls line the shelves. A crystal ball glows softly on a reading desk. Runes etched into the floor pulse with magical energy.
+- **Connections**: South to Tavern, North to Dragon's Hoard, East to Hall of Heroes (requires Ritual Candle), West to Treasure Chamber (requires Thieves' Tools)
+- **Items Available**: Ritual Candle, Scroll of Teleportation
+- **Puzzle**: Arcane Ritual Circle - light the candles from smallest flame to greatest power
+- **Actions**: Read spellbooks, light candles, take candle, take scroll
+
+### Treasure Chamber
+- **Room ID**: study
+- **Description**: Gold coins and precious gems fill this hidden chamber. A portrait of a legendary dragon slayer watches over a locked chest containing untold riches.
+- **Connections**: East to Wizard's Study, South to Dwarven Forge
+- **Items Available**: Thieves' Tools (after solving the puzzle)
+- **Puzzle**: Dragon Slayer's Riddle - count the dragon heads in each section of the painting. The combination is 3-7-4-1.
+- **Actions**: Examine portrait, open safe, take key
+
+### Dwarven Forge
+- **Room ID**: cellar
+- **Description**: The heat from ancient forges warms this stone chamber. Dwarven runes cover the walls, and weapon racks display legendary blades. A secret passage leads deeper underground.
+- **Connections**: North to Treasure Chamber, East to Tavern, South to Tomb of the Lich
+- **Items Available**: None
+- **Actions**: Look around
+
+### Hall of Heroes
+- **Room ID**: gallery
+- **Description**: Statues of legendary adventurers stand in eternal vigilance. Their stone eyes seem to judge your worth. A magical mirror shows visions of possible futures.
+- **Connections**: West to Wizard's Study, South to Temple of Pelor (requires Everburning Torch)
+- **Items Available**: Vorpal Dagger +1
+- **Puzzle**: Scrying Mirror Challenge - present your weapon at midnight position before the glass. Requires the Vorpal Dagger.
+- **Actions**: Examine mirror, study portraits, take dagger
+
+### Temple of Pelor
+- **Room ID**: chapel
+- **Description**: A sacred temple dedicated to the sun god Pelor. Golden light streams through stained glass windows. The altar radiates divine energy, offering blessings to worthy adventurers.
+- **Connections**: North to Hall of Heroes, West to Tavern (requires Holy Symbol), South to Portal Chamber
+- **Items Available**: Blessed Potion (Holy Water), Holy Symbol
+- **Actions**: Pray for blessings, examine altar, take holy water, take cross
+
+### Dragon's Hoard
+- **Room ID**: attic
+- **Description**: Mountains of gold and magical artifacts fill this hidden chamber. Ancient dragon scales litter the floor. Somewhere here lies secrets of the dungeon.
+- **Connections**: South to Wizard's Study
+- **Items Available**: Dungeon Map (reveals entire dungeon layout when taken)
+- **Actions**: Look around, take map
+
+### Tomb of the Lich
+- **Room ID**: crypt
+- **Description**: Ancient sarcophagi hold the remains of fallen heroes and dark lords. Necromantic energy crackles in the air. The inscriptions tell tales of a powerful lich who once ruled these lands.
+- **Connections**: North to Dwarven Forge, East to Goblin Prison
+- **Items Available**: Lich's Phylactery Key (Skeleton Key)
+- **Secret**: The inscriptions reveal the lever sequence for the Goblin Prison: LEFT, RIGHT, MIDDLE
+- **Actions**: Read inscriptions, open coffin, take skeleton key
+
+### Goblin Prison
+- **Room ID**: dungeon
+- **Description**: Cages and chains fill this chamber where goblins once held their prisoners. A complex mechanism of levers controls the cell doors. Three magical locks guard the passage forward.
+- **Connections**: North to Tavern, West to Tomb of the Lich, East to Portal Chamber (requires all 3 keys)
+- **Items Available**: Dragon Scale Key
+- **Puzzle**: Goblin Lock Mechanism - use the lever sequence LEFT, RIGHT, MIDDLE (found in Tomb inscriptions) with all three keys inserted
+- **Actions**: Examine mechanism, pull lever, use keys, take golden key
+
+### Portal Chamber (Final Room)
+- **Room ID**: vault
+- **Description**: A mystical chamber where reality bends. Arcane circles glow with power, and a shimmering portal awaits activation. The Tome of Portal Magic rests on a crystal pedestal.
+- **Connections**: West to Goblin Prison, North to Temple of Pelor, Exit (requires ritual completion)
+- **Items Available**: Tome of Portal Magic
+- **Puzzle**: Portal Activation Ritual - pour blessed potion on the circle, recite the scroll, invoke the tome
+- **Actions**: Take tome, read tome, perform ritual, open exit
+
+---
+
+### Everburning Torch
+- **Icon**: 🔥
+- **Location**: Tavern Entrance
+- **Description**: A magical torch enchanted with continual flame. It never goes out.
+- **Use**: Provides magical light. Required to access the Temple of Pelor and Hall of Heroes through locked passages.
+
+### Ritual Candle
+- **Icon**: 🕯️
+- **Location**: Wizard's Study
+- **Description**: A mystical candle inscribed with arcane runes. Essential for spellcasting.
+- **Use**: Required to access Hall of Heroes from the Wizard's Study. Used in the candle puzzle.
+
+### Thieves' Tools
+- **Icon**: 🗝️
+- **Location**: Treasure Chamber (after solving puzzle)
+- **Description**: A set of lockpicks favored by rogues. +2 to lockpicking checks.
+- **Use**: One of the three keys needed for the Portal Chamber. Consumed when used.
+
+### Dragon Scale Key
+- **Icon**: 🔑
+- **Location**: Goblin Prison
+- **Description**: A key forged from dragon scales. Glows with ancient magic.
+- **Use**: One of the three keys needed for the Portal Chamber. Consumed when used.
+
+### Lich's Phylactery Key (Skeleton Key)
+- **Icon**: 💀
+- **Location**: Tomb of the Lich
+- **Description**: A key carved from the bone of an ancient lich. Radiates necrotic energy.
+- **Use**: One of the three keys needed for the Portal Chamber. Consumed when used.
+
+### Vorpal Dagger +1
+- **Icon**: 🗡️
+- **Location**: Hall of Heroes
+- **Description**: A magical dagger that deals extra damage to undead. Critical on 19-20.
+- **Use**: Required for the Scrying Mirror puzzle. Hold it at midnight position before the mirror.
+
+### Blessed Potion (Holy Water)
+- **Icon**: 💧
+- **Location**: Temple of Pelor
+- **Description**: Holy water blessed by a cleric of Pelor. Effective against undead.
+- **Use**: Required for the final Portal Activation Ritual. Pour it on the arcane circle. Consumed when used.
+
+### Holy Symbol
+- **Icon**: ✝️
+- **Location**: Temple of Pelor
+- **Description**: A sacred symbol of divine power. Grants advantage on saves vs evil.
+- **Use**: Unlocks the passage between Tavern and Temple of Pelor.
+
+### Dungeon Map
+- **Icon**: 🗺️
+- **Location**: Dragon's Hoard
+- **Description**: A detailed map of the dungeon drawn by a previous adventurer.
+- **Use**: Reveals the entire dungeon layout when taken.
+
+### Scroll of Teleportation
+- **Icon**: 📜
+- **Location**: Wizard's Study
+- **Description**: A spell scroll containing the teleportation circle ritual incantation.
+- **Use**: Required for the final Portal Activation Ritual. Read it after pouring holy water. Consumed when used.
+
+### Tome of Portal Magic
+- **Icon**: 📕
+- **Location**: Portal Chamber
+- **Description**: The legendary spellbook containing the portal activation ritual.
+- **Use**: Required for the final Portal Activation Ritual. Invoke it to complete the escape. Consumed when used.
+
+---
+
+### Arcane Ritual Circle
+- **Location**: Wizard's Study
+- **Description**: Activate the ritual candles in the correct sequence to unlock the magical ward.
+- **Hint**: The wizard's notes say: "Light from smallest flame to greatest power."
+- **Solution**: Light the candles from shortest to tallest
+- **Reward**: Dispels the ward, reveals Thieves' Tools in the safe
+
+### Dragon Slayer's Riddle
+- **Location**: Treasure Chamber
+- **Description**: The portrait of the legendary hero holds the combination to the safe.
+- **Hint**: Count the dragon heads slain in each section of the painting.
+- **Solution**: The combination is 3-7-4-1
+- **Reward**: Opens the safe containing the Thieves' Tools
+
+### Scrying Mirror Challenge
+- **Location**: Hall of Heroes
+- **Description**: The magical mirror reveals secrets to those who prove their worth.
+- **Hint**: Present your weapon at midnight position before the glass.
+- **Requirement**: You must have the Vorpal Dagger
+- **Solution**: Hold the dagger at the midnight (12 o'clock) position
+- **Reward**: Reveals the secret passage to the Temple of Pelor
+
+### Goblin Lock Mechanism
+- **Location**: Goblin Prison
+- **Description**: Three enchanted levers control the prison cell doors and the passage to the Portal Chamber.
+- **Hint**: The lich's tomb inscriptions reveal the sequence: LEFT, RIGHT, MIDDLE
+- **Requirements**: All three magical keys (Thieves' Tools, Dragon Scale Key, Lich's Phylactery Key)
+- **Solution**: Insert all three keys, then pull levers in order: LEFT, RIGHT, MIDDLE
+- **Reward**: Opens the passage to the Portal Chamber
+- **Note**: All three keys are consumed when the mechanism is activated
+
+### Portal Activation Ritual
+- **Location**: Portal Chamber
+- **Description**: Cast the teleportation ritual to activate the escape portal.
+- **Hint**: Blessed potion on the circle, read the scroll, invoke the tome.
+- **Requirements**: Blessed Potion (Holy Water), Scroll of Teleportation, Tome of Portal Magic
+- **Solution**: 
+  1. Pour the Blessed Potion on the arcane circle
+  2. Recite the Scroll of Teleportation
+  3. Invoke the Tome of Portal Magic
+- **Reward**: The portal opens - QUEST COMPLETE! FREEDOM!
+- **Note**: All three ritual items are consumed when performing the ritual
+
+---
+
+## Locked Passages & Requirements
+
+| From | To | Key Required |
+|------|-----|-------------|
+| Tavern Entrance | Temple of Pelor | Everburning Torch |
+| Wizard's Study | Hall of Heroes | Ritual Candle |
+| Wizard's Study | Treasure Chamber | Thieves' Tools (consumed) |
+| Hall of Heroes | Temple of Pelor | Everburning Torch |
+| Temple of Pelor | Tavern Entrance | Holy Symbol |
+| Goblin Prison | Portal Chamber | All 3 keys (consumed) |
+| Portal Chamber | EXIT | Complete final ritual |
+
+---
+
+## Item Consumption Rules
+
+Some items are consumed (removed from inventory) when used:
+
+**Keys consumed when unlocking:**
+- Thieves' Tools - consumed when unlocking the Treasure Chamber passage
+- Dragon Scale Key - consumed when opening the Portal Chamber
+- Lich's Phylactery Key - consumed when opening the Portal Chamber
+
+**Ritual items consumed during final ritual:**
+- Blessed Potion (Holy Water) - consumed when poured on the circle
+- Scroll of Teleportation - consumed when read
+- Tome of Portal Magic - consumed when invoked
+
+**Items that are NOT consumed:**
+- Everburning Torch - keeps providing light
+- Ritual Candle - keeps burning
+- Vorpal Dagger - stays in inventory
+- Holy Symbol - stays in inventory
+- Dungeon Map - stays in inventory
+
+---
+
+## Tips for Adventurers
+
+1. **Roll for Perception** - Always look around when entering a new room. You might miss hidden items!
+2. **Get the torch first** - The Everburning Torch is essential. Take it immediately to access the Temple and Hall of Heroes.
+3. **Read everything** - Spellbooks and inscriptions contain puzzle solutions and hints.
+4. **The map reveals all** - Find the Dungeon Map in the Dragon's Hoard to see the complete layout.
+5. **Collect all three keys** - You need the Thieves' Tools, Dragon Scale Key, and Lich's Key for the Portal Chamber.
+6. **The dagger is magical** - The Vorpal Dagger is required for the mirror puzzle in the Hall of Heroes.
+7. **Holy items are essential** - The Holy Symbol allows travel between the Tavern and Temple.
+8. **Prepare the ritual** - Gather Holy Water, Scroll, and Tome before attempting the final escape ritual.
+9. **Items disappear after use** - Keys and ritual items are consumed, so use them wisely!
+
+---
+
+## Game Controls
+
+| Key | Action |
+|-----|--------|
+| W or ↑ | Move North |
+| S or ↓ | Move South |
+| A or ← | Move West |
+| D or → | Move East |
+| L | Look around (Roll for Perception!) |
+| E | Export game log to clipboard |
+| Click action buttons | Perform specific actions in rooms |
+| Enter in chat | Consult the Dungeon Master for hints |
+
+---
+
+## Optimal Walkthrough (Speedrun Path)
+
+1. **Tavern Entrance** → Take the Everburning Torch
+2. Go **East** to **Temple of Pelor** → Take Holy Water and Holy Symbol
+3. Go **North** to **Hall of Heroes** → Take Vorpal Dagger → Solve Mirror Puzzle (hold dagger at midnight)
+4. Go **West** to **Wizard's Study** → Take Candle and Scroll → Solve Candle Puzzle (light smallest to largest)
+5. Go **West** to **Treasure Chamber** → Examine Portrait → Open Safe (3-7-4-1) → Take Thieves' Tools
+6. Go **North** to **Dragon's Hoard** → Take Dungeon Map
+7. Return **South** to Treasure Chamber, then **South** to **Dwarven Forge**
+8. Go **South** to **Tomb of the Lich** → Read Inscriptions (reveals lever sequence) → Take Skeleton Key
+9. Go **East** to **Goblin Prison** → Take Dragon Scale Key → Insert all 3 keys → Pull Levers (LEFT, RIGHT, MIDDLE)
+10. Go **East** to **Portal Chamber** → Take Tome → Read Tome → Perform Ritual (use Holy Water, Scroll, Tome)
+11. **Open Exit** → 🎉 VICTORY! QUEST COMPLETE! 🎉
+
+---
+
+## Room Navigation Map
+
+```
+                    [Dragon's Hoard]
+                          |
+                         (N)
+                          |
+[Treasure Chamber]---(E)---[Wizard's Study]---(E)---[Hall of Heroes]
+        |                       |                         |
+       (S)                     (S)                       (S)
+        |                       |                         |
+[Dwarven Forge]-------(E)---[Tavern Entrance]---(E)---[Temple of Pelor]
+        |                       |                         |
+       (S)                     (S)                       (S)
+        |                       |                         |
+[Tomb of the Lich]---(E)---[Goblin Prison]---(E)---[Portal Chamber]
+```
+
+**Legend:**
+- (N) = North passage
+- (S) = South passage  
+- (E) = East passage
+- Some passages require items to unlock (see Locked Passages section)
